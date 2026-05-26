@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashish Mohan | Turning Data into Decisions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #06080f;
+    --surface: #0d1117;
+    --surface2: #131920;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #e8edf5;
+    --muted: #7a8899;
+    --accent: #4f8ef7;
+    --accent2: #00d4aa;
+    --accent3: #f5a623;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(6,8,15,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 16px; font-weight: 700;
+    color: var(--text); letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 13px; color: var(--muted);
+    text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 48px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(79,142,247,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79,142,247,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute; top: -200px; right: -200px;
+    width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(79,142,247,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-glow2 {
+    position: absolute; bottom: -100px; left: 200px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,212,170,0.05) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; max-width: 780px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px;
+    border: 1px solid rgba(79,142,247,0.25);
+    padding: 6px 14px; border-radius: 20px;
+    background: rgba(79,142,247,0.06);
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent2); flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:0.3; } }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 800; line-height: 1.05;
+    letter-spacing: -0.02em; margin-bottom: 24px;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+
+  .hero-sub {
+    font-size: 17px; color: var(--muted); max-width: 540px;
+    line-height: 1.75; margin-bottom: 40px; font-weight: 300;
+  }
+  .hero-sub strong { color: var(--text); font-weight: 400; }
+
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 64px; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 26px; border-radius: 8px;
+    background: var(--accent); color: #fff;
+    font-family: var(--font-body); font-size: 14px; font-weight: 500;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 26px; border-radius: 8px;
+    background: transparent; color: var(--text);
+    font-family: var(--font-body); font-size: 14px; font-weight: 400;
+    text-decoration: none; border: 1px solid var(--border2);
+    cursor: pointer; transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); background: rgba(79,142,247,0.06); }
+
+  .hero-stats {
+    display: flex; gap: 48px; flex-wrap: wrap;
+    padding-top: 40px; border-top: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 32px; font-weight: 700; color: var(--text);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--accent2); }
+  .stat-label {
+    font-size: 12px; color: var(--muted);
+    margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em;
+  }
+
+  /* SECTIONS */
+  section { padding: 96px 48px; max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px; font-weight: 500;
+  }
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700; line-height: 1.15;
+    letter-spacing: -0.02em; margin-bottom: 48px; color: var(--text);
+  }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .about-text p { color: var(--muted); font-size: 15px; line-height: 1.85; margin-bottom: 16px; }
+  .about-text p strong { color: var(--text); font-weight: 400; }
+  .about-certs { display: flex; flex-direction: column; gap: 12px; }
+  .cert-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 18px; border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: border-color 0.2s;
+  }
+  .cert-item:hover { border-color: var(--border2); }
+  .cert-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; flex-shrink: 0; font-weight: 700;
+    font-family: var(--font-display);
+  }
+  .cert-icon.pbi  { background: rgba(242,200,17,0.12); color: #f2c811; }
+  .cert-icon.fabric { background: rgba(79,142,247,0.12); color: #4f8ef7; }
+  .cert-icon.aws  { background: rgba(245,166,35,0.12); color: #f5a623; }
+  .cert-icon.tab  { background: rgba(0,212,170,0.12); color: #00d4aa; }
+  .cert-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .cert-badge { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .skill-card {
+    padding: 22px 20px; border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: border-color 0.25s, transform 0.2s;
+  }
+  .skill-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .skill-card-icon { font-size: 22px; margin-bottom: 12px; }
+  .skill-card-title {
+    font-family: var(--font-display); font-size: 13px; font-weight: 600;
+    margin-bottom: 10px; color: var(--text); letter-spacing: 0.02em;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 11px; padding: 3px 9px; border-radius: 20px;
+    border: 1px solid var(--border2); color: var(--muted);
+    background: var(--surface2);
+  }
+
+  /* PROJECTS */
+  .project-featured {
+    border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+    background: var(--surface);
+    margin-bottom: 24px;
+    transition: border-color 0.25s;
+  }
+  .project-featured:hover { border-color: rgba(79,142,247,0.3); }
+  .project-header {
+    padding: 36px 40px 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 24px;
+  }
+  .project-meta { flex: 1; }
+  .project-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent2); margin-bottom: 16px;
+    background: rgba(0,212,170,0.08);
+    border: 1px solid rgba(0,212,170,0.2);
+    padding: 4px 12px; border-radius: 20px;
+  }
+  .project-title {
+    font-family: var(--font-display);
+    font-size: 22px; font-weight: 700; color: var(--text);
+    margin-bottom: 10px; line-height: 1.25;
+  }
+  .project-desc {
+    font-size: 14px; color: var(--muted);
+    line-height: 1.75; max-width: 560px;
+  }
+  .project-link-btn {
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 10px 18px; border-radius: 8px; font-size: 13px;
+    border: 1px solid var(--border2); color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .project-link-btn:hover { border-color: var(--accent); background: rgba(79,142,247,0.06); }
+  .project-body {
+    padding: 28px 40px;
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 24px;
+  }
+  .proj-stat-num {
+    font-family: var(--font-display); font-size: 20px;
+    font-weight: 700; color: var(--text);
+  }
+  .proj-stat-num span { color: var(--accent); }
+  .proj-stat-label {
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px;
+  }
+  .project-footer {
+    padding: 20px 40px; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .tech-tag {
+    font-size: 11px; padding: 4px 10px; border-radius: 6px;
+    background: rgba(79,142,247,0.08); color: var(--accent);
+    border: 1px solid rgba(79,142,247,0.18);
+  }
+
+  /* EXPERIENCE */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 8px; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .timeline-item { position: relative; margin-bottom: 52px; }
+  .timeline-dot {
+    position: absolute; left: -34px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid var(--accent); background: var(--bg);
+  }
+  .timeline-item:first-child .timeline-dot { background: var(--accent); }
+  .timeline-period {
+    font-size: 12px; color: var(--muted);
+    letter-spacing: 0.04em; margin-bottom: 8px;
+  }
+  .timeline-role {
+    font-family: var(--font-display); font-size: 18px;
+    font-weight: 600; color: var(--text); margin-bottom: 2px;
+  }
+  .timeline-company {
+    font-size: 14px; color: var(--accent); margin-bottom: 14px;
+  }
+  .timeline-bullets { list-style: none; }
+  .timeline-bullets li {
+    font-size: 14px; color: var(--muted); line-height: 1.75;
+    padding: 4px 0 4px 20px; position: relative;
+  }
+  .timeline-bullets li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--accent2); font-size: 11px; top: 7px;
+  }
+  .timeline-bullets li strong { color: var(--text); font-weight: 400; }
+
+  /* DIVIDER */
+  .section-divider {
+    border: none; border-top: 1px solid var(--border);
+    margin: 0 48px;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; color: var(--muted);
+    flex-wrap: wrap; gap: 16px;
+  }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a {
+    color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .hero-content > * { animation: fadeUp 0.7s ease both; }
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.55s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { gap: 20px; }
+    .hero { padding: 100px 24px 60px; }
+    section { padding: 64px 24px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .project-header { flex-direction: column; }
+    .project-body { grid-template-columns: repeat(2,1fr); }
+    .hero-stats { gap: 28px; }
+    .section-divider { margin: 0 24px; }
+    footer { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Ashish <span>Mohan</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Available for Senior BI &amp; Analytics roles &middot; Abu Dhabi, UAE</div>
+    <h1>Turning data<br>into <em>decisions</em></h1>
+    <p class="hero-sub">
+      I build BI systems that leaders actually use. <strong>6+ years</strong> delivering Power BI solutions,
+      scalable data pipelines, and clean data models for <strong>Fortune 500 organisations</strong>
+      including CVS Health, UNFI, and Meta.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View Projects ↓</a>
+      <a href="https://linkedin.com/in/ashishmohan1612" class="btn-ghost" target="_blank">LinkedIn ↗</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">85<span>%</span></div>
+        <div class="stat-label">Reporting effort reduced</div>
+      </div>
+      <div>
+        <div class="stat-num">260<span>h</span></div>
+        <div class="stat-label">FTE hours saved annually</div>
+      </div>
+      <div>
+        <div class="stat-num">35<span>%</span></div>
+        <div class="stat-label">Forecast accuracy improvement</div>
+      </div>
+      <div>
+        <div class="stat-num">6<span>+</span></div>
+        <div class="stat-label">Years experience</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <h2>BI that moves the needle</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>For the past 6+ years, I've helped businesses turn complex data into reporting systems and insights that leaders <strong>actually use to make decisions</strong>.</p>
+      <p>At TCS — supporting CVS Health and UNFI — I built Power BI solutions that reduced manual reporting effort by <strong>85%</strong>, recovered 260 FTE hours annually, and improved forecast accuracy by <strong>35%</strong>.</p>
+      <p>My approach: build clean data models, create scalable pipelines, and understand what stakeholders truly need to <strong>act quickly</strong>. I work across Power BI, Microsoft Fabric, Databricks, Azure, SQL, and Python.</p>
+    </div>
+    <div class="about-certs">
+      <div class="cert-item">
+        <div class="cert-icon pbi">PBI</div>
+        <div>
+          <div class="cert-name">Power BI Data Analyst</div>
+          <div class="cert-badge">Microsoft Certified &middot; PL-300</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon fabric">DP</div>
+        <div>
+          <div class="cert-name">Fabric Analytics Engineer</div>
+          <div class="cert-badge">Microsoft Certified &middot; DP-600</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon aws">AWS</div>
+        <div>
+          <div class="cert-name">AWS Cloud Practitioner</div>
+          <div class="cert-badge">Amazon Web Services Certified</div>
+        </div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon tab">TAB</div>
+        <div>
+          <div class="cert-name">Tableau Analyst</div>
+          <div class="cert-badge">Tableau Certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <h2>Technical stack</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-icon">📊</div>
+      <div class="skill-card-title">BI &amp; Visualisation</div>
+      <div class="skill-tags">
+        <span class="tag">Power BI</span>
+        <span class="tag">Tableau</span>
+        <span class="tag">QlikView</span>
+        <span class="tag">Looker</span>
+        <span class="tag">Microsoft Fabric</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">🛢️</div>
+      <div class="skill-card-title">Data &amp; Modelling</div>
+      <div class="skill-tags">
+        <span class="tag">SQL Server</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Star Schema</span>
+        <span class="tag">DAX</span>
+        <span class="tag">M Query</span>
+        <span class="tag">ETL/ELT</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">☁️</div>
+      <div class="skill-card-title">Platforms &amp; Cloud</div>
+      <div class="skill-tags">
+        <span class="tag">Databricks</span>
+        <span class="tag">Azure</span>
+        <span class="tag">AWS</span>
+        <span class="tag">Spark</span>
+        <span class="tag">SSIS</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">🐍</div>
+      <div class="skill-card-title">Programming</div>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">R</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">📐</div>
+      <div class="skill-card-title">Analytics</div>
+      <div class="skill-tags">
+        <span class="tag">Forecasting</span>
+        <span class="tag">A/B Testing</span>
+        <span class="tag">Root Cause Analysis</span>
+        <span class="tag">Trend Analytics</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">🤝</div>
+      <div class="skill-card-title">Business Skills</div>
+      <div class="skill-tags">
+        <span class="tag">Stakeholder Mgmt</span>
+        <span class="tag">Requirements Gathering</span>
+        <span class="tag">Process Automation</span>
+        <span class="tag">MIS Reporting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <h2>Featured work</h2>
+
+  <div class="project-featured">
+    <div class="project-header">
+      <div class="project-meta">
+        <div class="project-badge">Power BI &middot; AdventureWorks</div>
+        <div class="project-title">AdventureWorks Sales Report</div>
+        <p class="project-desc">
+          Multi-page sales analytics dashboard demonstrating end-to-end BI development —
+          star schema modelling, a 23-measure DAX library, time intelligence,
+          cross-page drill-through, and Row-Level Security on a $51.9M sales dataset.
+        </p>
+      </div>
+      <a href="https://github.com/Astromohan/adventureworks-powerbi-sales-report"
+         class="project-link-btn" target="_blank">View on GitHub ↗</a>
+    </div>
+    <div class="project-body">
+      <div class="proj-stat">
+        <div class="proj-stat-num">5<span>+</span></div>
+        <div class="proj-stat-label">Report Pages</div>
+      </div>
+      <div class="proj-stat">
+        <div class="proj-stat-num">23</div>
+        <div class="proj-stat-label">DAX Measures</div>
+      </div>
+      <div class="proj-stat">
+        <div class="proj-stat-num">6</div>
+        <div class="proj-stat-label">Dim Tables</div>
+      </div>
+      <div class="proj-stat">
+        <div class="proj-stat-num">RLS</div>
+        <div class="proj-stat-label">Row-Level Security</div>
+      </div>
+    </div>
+    <div class="project-footer">
+      <span class="tech-tag">Power BI</span>
+      <span class="tech-tag">DAX</span>
+      <span class="tech-tag">Star Schema</span>
+      <span class="tech-tag">Time Intelligence</span>
+      <span class="tech-tag">RANKX</span>
+      <span class="tech-tag">Row-Level Security</span>
+      <span class="tech-tag">Drill-through</span>
+      <span class="tech-tag">AdventureWorks</span>
+    </div>
+  </div>
+
+  <!-- ADD MORE PROJECT CARDS HERE — copy the .project-featured block above -->
+
+</section>
+
+<hr class="section-divider">
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2>Where I've worked</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Aug 2021 &ndash; Sep 2025</div>
+      <div class="timeline-role">Senior Data Analyst</div>
+      <div class="timeline-company">Tata Consultancy Services &middot; New Jersey, USA &middot; Clients: CVS Health, UNFI</div>
+      <ul class="timeline-bullets">
+        <li>Reduced manual reporting by <strong>85%</strong> via Power BI automation, saving <strong>260 FTE hours</strong> annually with real-time KPI monitoring for 500+ stakeholders</li>
+        <li>Led ETL modernisation to Databricks, improving processing efficiency by <strong>40%</strong></li>
+        <li>Improved forecast accuracy by <strong>35%</strong> through historical trend analysis and scenario modelling</li>
+        <li>Improved data quality by <strong>35%</strong> through automated validation frameworks and quality checks</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">May 2021 &ndash; Aug 2021</div>
+      <div class="timeline-role">Data Operations Associate</div>
+      <div class="timeline-company">Facebook (Meta) &middot; New York, USA</div>
+      <ul class="timeline-bullets">
+        <li>Optimised ETL workflows using Spark and Presto, reducing runtimes by <strong>25%</strong></li>
+        <li>Improved operational uptime by <strong>45%</strong> through proactive data quality management</li>
+        <li>Automated data collection via Python scripting, reducing reporting turnaround from days to hours with 99%+ accuracy</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Sep 2017 &ndash; May 2019</div>
+      <div class="timeline-role">Senior Analyst</div>
+      <div class="timeline-company">Capgemini &middot; Mumbai, India &middot; Clients: Posten Bring, Syngenta</div>
+      <ul class="timeline-bullets">
+        <li>Designed QlikView dashboards for finance and supply chain, improving decision-making speed by <strong>40%</strong></li>
+        <li>Implemented reporting automation using Oracle SQL, saving <strong>10% analyst time</strong> weekly</li>
+        <li>Delivered application support with <strong>95%+ SLA adherence</strong>, resolving 200+ incidents monthly</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>Ashish Mohan &middot; ashish.mohan42@gmail.com</div>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/ashishmohan1612" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Astromohan" target="_blank">GitHub</a>
+    <a href="mailto:ashish.mohan42@gmail.com">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
