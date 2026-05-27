@@ -44,7 +44,7 @@
   }
   .nav-logo {
     font-family: var(--font);
-    font-size: 15px; font-weight: 700;
+    font-size: 19px; font-weight: 700;
     color: var(--text); letter-spacing: 0.02em;
     text-decoration: none;
   }
@@ -355,7 +355,7 @@
     border: 1px solid var(--border2); color: var(--muted2);
     background: var(--surface2);
   }
-
+ 
  /* EDUCATION */
 .edu-list { display: flex; flex-direction: column; gap: 0; }
 .edu-item {
@@ -372,7 +372,7 @@
 .edu-degree { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
 .edu-school { font-size: 13px; color: var(--accent); margin-bottom: 4px; }
 .edu-focus { font-size: 12px; color: var(--muted); line-height: 1.6; }
-
+ 
   /* ─── DIVIDER ─── */
   .section-divider { border: none; border-top: 1px solid var(--border); margin: 0 48px; }
 
@@ -808,32 +808,33 @@ and opportunities for improvement.</li>
 <section id="education">
   <div class="section-label">Education</div>
   <h2>Academic background</h2>
-  <div class="edu-list">
+  <div class="timeline">
 
-    <div class="edu-item">
-      <div class="edu-icon">🎓</div>
-      <div>
-        <div class="edu-degree">Executive Master&rsquo;s in Project Management</div>
-        <div class="edu-school">University of the Cumberlands &nbsp;&middot;&nbsp; USA &nbsp;&middot;&nbsp; Aug 2025</div>
-        <div class="edu-focus">Strategic Planning &middot; Process Optimisation &middot; Stakeholder Management</div>
-      </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Aug 2025</div>
+      <div class="timeline-role">Executive Master&rsquo;s in Project Management</div>
+      <div class="timeline-company">University of the Cumberlands &nbsp;&middot;&nbsp; USA</div>
+      <ul class="timeline-bullets">
+        <li>Strategic Planning &middot; Process Optimisation &middot; Stakeholder Management</li>
+      </ul>
     </div>
 
-    <div class="edu-item">
-      <div class="edu-icon">🎓</div>
-      <div>
-        <div class="edu-degree">MS, Information Technology and Analytics</div>
-        <div class="edu-school">Rutgers Business School &nbsp;&middot;&nbsp; USA &nbsp;&middot;&nbsp; Dec 2020</div>
-        <div class="edu-focus">Business Analytics &middot; Data Science &middot; Statistical Modelling &middot; Data Visualisation</div>
-      </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Dec 2020</div>
+      <div class="timeline-role">MS, Information Technology and Analytics</div>
+      <div class="timeline-company">Rutgers Business School &nbsp;&middot;&nbsp; USA</div>
+      <ul class="timeline-bullets">
+        <li>Business Analytics &middot; Data Science &middot; Statistical Modelling &middot; Data Visualisation</li>
+      </ul>
     </div>
 
-    <div class="edu-item">
-      <div class="edu-icon">🎓</div>
-      <div>
-        <div class="edu-degree">Bachelor of Engineering, Computer Engineering</div>
-        <div class="edu-school">University of Mumbai &nbsp;&middot;&nbsp; India &nbsp;&middot;&nbsp; Jun 2017</div>
-      </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-period">Jun 2017</div>
+      <div class="timeline-role">Bachelor of Engineering, Computer Engineering</div>
+      <div class="timeline-company">University of Mumbai &nbsp;&middot;&nbsp; India</div>
     </div>
 
   </div>
