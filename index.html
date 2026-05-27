@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashish Mohan | Turning Data into Decisions</title>
+<title>Ashish Mohan | Senior BI & Data Analyst</title>
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -15,6 +15,7 @@
     --border2: rgba(255,255,255,0.12);
     --text: #e8edf5;
     --muted: #7a8899;
+    --muted2: #a0adb8;
     --accent: #4f8ef7;
     --accent2: #00d4aa;
     --accent3: #f5a623;
@@ -31,7 +32,7 @@
     font-size: 15px;
   }
 
-  /* NAV */
+  /* ─── NAV ─── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -43,7 +44,7 @@
   }
   .nav-logo {
     font-family: var(--font);
-    font-size: 16px; font-weight: 700;
+    font-size: 15px; font-weight: 700;
     color: var(--text); letter-spacing: 0.02em;
     text-decoration: none;
   }
@@ -56,68 +57,38 @@
   }
   .nav-links a:hover { color: var(--text); }
 
-  /* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-
-  padding: 120px 48px 80px;
-
-  position: relative;
-  overflow: hidden;
-
-  background-image:
-    linear-gradient(
-      to right,
-      rgba(6,8,15,0.72) 0%,
-      rgba(6,8,15,0.42) 45%,
-      rgba(6,8,15,0.12) 100%
-    ),
-    url('https://images.unsplash.com/photo-1594745025719-a419ca3852c9?q=100&w=4000&auto=format&fit=crop');
-
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
- .hero-grid {
-  position: absolute;
-  inset: 0;
-
-  background-image:
-    linear-gradient(
-      rgba(79,142,247,0.02) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(79,142,247,0.02) 1px,
-      transparent 1px
-    );
-
-  background-size: 60px 60px;
-
-  pointer-events: none;
-}
-
-  /*.hero-glow {
-    position: absolute; top: -200px; right: -200px;
-    width: 700px; height: 700px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(79,142,247,0.08) 0%, transparent 65%);
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(6,8,15,0.78) 0%,
+        rgba(6,8,15,0.48) 45%,
+        rgba(6,8,15,0.16) 100%
+      ),
+      url('https://images.unsplash.com/photo-1594745025719-a419ca3852c9?q=100&w=4000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(79,142,247,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79,142,247,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
     pointer-events: none;
   }
-  .hero-glow2 {
-    position: absolute; bottom: -100px; left: 200px;
-    width: 500px; height: 500px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,212,170,0.05) 0%, transparent 65%);
-    pointer-events: none;
-  }
- */
   .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 680px;
-}
+    position: relative; z-index: 2;
+    max-width: 700px;
+  }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 10px;
     font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
@@ -133,96 +104,88 @@
     animation: pulse 2s ease-in-out infinite;
   }
   @keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:0.3; } }
-h1 {
-  font-family: var(--font);
 
-  font-size: clamp(40px, 5.5vw, 68px);
-  font-weight: 700;
-
-  line-height: 1.03;
-  letter-spacing: -0.04em;
-
-  margin-bottom: 24px;
-
-  color: var(--text);
-}
+  h1 {
+    font-family: var(--font);
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    margin-bottom: 22px;
+    color: var(--text);
+  }
   h1 em { font-style: normal; color: var(--accent); }
 
- .hero-sub {
-  max-width: 600px;
-
-  margin-bottom: 42px;
-
-  color: rgba(232,237,245,0.84);
-
-  font-size: 18px;
-  line-height: 1.8;
-  font-weight: 400;
-}
+  .hero-sub {
+    max-width: 580px;
+    margin-bottom: 40px;
+    color: rgba(232,237,245,0.82);
+    font-size: 17px;
+    line-height: 1.82;
+    font-weight: 400;
+  }
   .hero-sub strong { color: var(--text); font-weight: 600; }
 
-  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 64px; }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 60px; }
   .btn-primary {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 13px 26px; border-radius: 8px;
+    padding: 12px 24px; border-radius: 8px;
     background: var(--accent); color: #fff;
-    font-family: var(--font); font-size: 14px; font-weight: 600;
+    font-family: var(--font); font-size: 13px; font-weight: 600;
     text-decoration: none; border: none; cursor: pointer;
-    transition: opacity 0.2s, transform 0.15s;
+    transition: opacity 0.2s, transform 0.15s; letter-spacing: 0.01em;
   }
   .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
   .btn-ghost {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 13px 26px; border-radius: 8px;
-    background: transparent; color: var(--text);
-    font-family: var(--font); font-size: 14px; font-weight: 400;
+    padding: 12px 24px; border-radius: 8px;
+    background: transparent; color: var(--muted2);
+    font-family: var(--font); font-size: 13px; font-weight: 400;
     text-decoration: none; border: 1px solid var(--border2);
-    cursor: pointer; transition: border-color 0.2s, background 0.2s;
+    cursor: pointer; transition: border-color 0.2s, background 0.2s, color 0.2s;
   }
-  .btn-ghost:hover { border-color: var(--accent); background: rgba(79,142,247,0.06); }
+  .btn-ghost:hover { border-color: rgba(79,142,247,0.5); color: var(--text); background: rgba(79,142,247,0.05); }
 
   .hero-stats {
     display: flex; gap: 48px; flex-wrap: wrap;
     padding-top: 40px; border-top: 1px solid var(--border);
   }
   .stat-num {
-    font-family: var(--font);
-    font-size: 30px; font-weight: 700; color: var(--text); line-height: 1;
+    font-size: 28px; font-weight: 700; color: var(--text); line-height: 1;
   }
   .stat-num span { color: var(--accent2); }
   .stat-label {
     font-size: 11px; color: var(--muted);
-    margin-top: 4px; text-transform: uppercase; letter-spacing: 0.07em;
+    margin-top: 5px; text-transform: uppercase; letter-spacing: 0.07em;
   }
 
-  /* SECTIONS */
+  /* ─── SECTIONS ─── */
   section { padding: 96px 48px; max-width: 1100px; margin: 0 auto; }
   .section-label {
-    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 14px; font-weight: 600;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 12px; font-weight: 700;
   }
   h2 {
-    font-family: var(--font);
-    font-size: clamp(26px, 3vw, 38px);
-    font-weight: 700; line-height: 1.15;
-    letter-spacing: -0.01em; margin-bottom: 48px; color: var(--text);
+    font-size: clamp(24px, 2.8vw, 34px);
+    font-weight: 700; line-height: 1.18;
+    letter-spacing: -0.015em; margin-bottom: 48px; color: var(--text);
   }
 
-  /* ABOUT */
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-  .about-text p { color: var(--muted); font-size: 15px; line-height: 1.85; margin-bottom: 16px; }
+  /* ─── ABOUT ─── */
+  .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: start; }
+  .about-text p { color: var(--muted2); font-size: 15px; line-height: 1.88; margin-bottom: 18px; }
   .about-text p strong { color: var(--text); font-weight: 600; }
-  .about-certs { display: flex; flex-direction: column; gap: 12px; }
+  .about-certs { display: flex; flex-direction: column; gap: 10px; }
   .cert-item {
     display: flex; align-items: center; gap: 14px;
-    padding: 14px 18px; border-radius: 10px;
+    padding: 13px 16px; border-radius: 10px;
     border: 1px solid var(--border);
     background: var(--surface);
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, background 0.2s;
   }
-  .cert-item:hover { border-color: var(--border2); }
+  .cert-item:hover { border-color: var(--border2); background: var(--surface2); }
   .cert-icon {
-    width: 38px; height: 38px; border-radius: 8px;
+    width: 36px; height: 36px; border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
     font-size: 10px; flex-shrink: 0; font-weight: 700;
     font-family: var(--font); letter-spacing: 0;
@@ -234,116 +197,31 @@ h1 {
   .cert-name  { font-size: 13px; font-weight: 600; color: var(--text); }
   .cert-badge { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
-  /* SKILLS */
-  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .skill-card {
-    padding: 22px 20px; border-radius: 12px;
-    border: 1px solid var(--border); background: var(--surface);
-    transition: border-color 0.25s, transform 0.2s;
-  }
-  .skill-card:hover { border-color: var(--border2); transform: translateY(-2px); }
-  .skill-card-icon  { font-size: 22px; margin-bottom: 12px; }
-  .skill-card-title { font-size: 13px; font-weight: 700; margin-bottom: 10px; color: var(--text); letter-spacing: 0.02em; }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag {
-    font-size: 11px; padding: 3px 9px; border-radius: 20px;
-    border: 1px solid var(--border2); color: var(--muted);
-    background: var(--surface2);
-  }
-
-  /* PROJECTS — featured (Power BI) */
-  .project-featured {
-    border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
-    background: var(--surface); margin-bottom: 24px;
-    transition: border-color 0.25s;
-  }
-  .project-featured:hover { border-color: rgba(79,142,247,0.3); }
-  .project-header {
-    padding: 32px 36px 28px; border-bottom: 1px solid var(--border);
-    display: flex; align-items: flex-start; justify-content: space-between; gap: 24px;
-  }
-  .project-meta { flex: 1; }
-  .project-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--accent2); margin-bottom: 14px;
-    background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.2);
-    padding: 4px 12px; border-radius: 20px;
-  }
-  .project-title {
-    font-size: 20px; font-weight: 700; color: var(--text);
-    margin-bottom: 10px; line-height: 1.25;
-  }
-  .project-desc { font-size: 14px; color: var(--muted); line-height: 1.75; max-width: 560px; }
-  .project-link-btn {
-    flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;
-    padding: 10px 18px; border-radius: 8px; font-size: 13px; font-family: var(--font);
-    border: 1px solid var(--border2); color: var(--text); text-decoration: none;
-    transition: border-color 0.2s, background 0.2s; white-space: nowrap;
-  }
-  .project-link-btn:hover { border-color: var(--accent); background: rgba(79,142,247,0.06); }
-  .project-body {
-    padding: 24px 36px;
-    display: grid; grid-template-columns: repeat(4,1fr); gap: 20px;
-  }
-  .proj-stat-num { font-size: 20px; font-weight: 700; color: var(--text); }
-  .proj-stat-num span { color: var(--accent); }
-  .proj-stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
-  .project-footer {
-    padding: 18px 36px; border-top: 1px solid var(--border);
-    display: flex; flex-wrap: wrap; gap: 8px;
-  }
-  .tech-tag {
-    font-size: 11px; padding: 4px 10px; border-radius: 6px;
-    background: rgba(79,142,247,0.08); color: var(--accent);
-    border: 1px solid rgba(79,142,247,0.18);
-  }
-
-  /* PROJECTS — grid (other repos) */
-  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .proj-card {
-    padding: 24px 22px; border-radius: 12px;
-    border: 1px solid var(--border); background: var(--surface);
-    display: flex; flex-direction: column; gap: 10px;
-    transition: border-color 0.25s, transform 0.2s;
-    text-decoration: none;
-  }
-  .proj-card:hover { border-color: rgba(79,142,247,0.3); transform: translateY(-2px); }
-  .proj-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
-  .proj-card-icon { font-size: 20px; }
-  .proj-card-lang {
-    font-size: 10px; padding: 2px 8px; border-radius: 20px;
-    border: 1px solid var(--border2); color: var(--muted); background: var(--surface2);
-    white-space: nowrap;
-  }
-  .proj-card-name { font-size: 14px; font-weight: 700; color: var(--accent); line-height: 1.3; }
-  .proj-card-desc { font-size: 13px; color: var(--muted); line-height: 1.65; flex: 1; }
-  .proj-card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
-  .proj-card-tag {
-    font-size: 10px; padding: 2px 8px; border-radius: 20px;
-    background: rgba(79,142,247,0.07); color: var(--accent);
-    border: 1px solid rgba(79,142,247,0.15);
-  }
-
-  /* EXPERIENCE */
+  /* ─── EXPERIENCE ─── */
   .timeline { position: relative; padding-left: 28px; }
   .timeline::before {
     content: ''; position: absolute; left: 0; top: 8px; bottom: 0;
-    width: 1px; background: var(--border);
+    width: 1px; background: linear-gradient(to bottom, rgba(79,142,247,0.4), var(--border));
   }
   .timeline-item { position: relative; margin-bottom: 52px; }
+  .timeline-item:last-child { margin-bottom: 0; }
   .timeline-dot {
-    position: absolute; left: -34px; top: 6px;
-    width: 12px; height: 12px; border-radius: 50%;
-    border: 2px solid var(--accent); background: var(--bg);
+    position: absolute; left: -34px; top: 7px;
+    width: 11px; height: 11px; border-radius: 50%;
+    border: 2px solid rgba(79,142,247,0.5); background: var(--bg);
+    transition: border-color 0.2s;
   }
-  .timeline-item:first-child .timeline-dot { background: var(--accent); }
-  .timeline-period { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 6px; }
-  .timeline-role { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-  .timeline-company { font-size: 13px; color: var(--accent); margin-bottom: 14px; }
+  .timeline-item:first-child .timeline-dot {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(79,142,247,0.12);
+  }
+  .timeline-period { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 6px; text-transform: uppercase; }
+  .timeline-role { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 3px; letter-spacing: -0.01em; }
+  .timeline-company { font-size: 13px; color: var(--accent); margin-bottom: 16px; }
   .timeline-bullets { list-style: none; }
   .timeline-bullets li {
-    font-size: 14px; color: var(--muted); line-height: 1.75;
+    font-size: 14px; color: var(--muted2); line-height: 1.78;
     padding: 4px 0 4px 20px; position: relative;
   }
   .timeline-bullets li::before {
@@ -352,13 +230,133 @@ h1 {
   }
   .timeline-bullets li strong { color: var(--text); font-weight: 600; }
 
-  /* DIVIDER */
+  /* Impact pills inside timeline */
+  .impact-pill {
+    display: inline-block;
+    background: rgba(0,212,170,0.08);
+    border: 1px solid rgba(0,212,170,0.2);
+    color: var(--accent2);
+    font-size: 11px; font-weight: 600;
+    padding: 1px 8px; border-radius: 20px;
+    margin-left: 4px; letter-spacing: 0.02em;
+    vertical-align: middle;
+  }
+
+  /* ─── PROJECTS (curated) ─── */
+  .project-featured {
+    border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+    background: var(--surface); margin-bottom: 20px;
+    transition: border-color 0.25s;
+  }
+  .project-featured:hover { border-color: rgba(79,142,247,0.28); }
+  .project-header {
+    padding: 28px 32px 24px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 24px;
+  }
+  .project-meta { flex: 1; }
+  .project-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent2); margin-bottom: 12px;
+    background: rgba(0,212,170,0.07); border: 1px solid rgba(0,212,170,0.18);
+    padding: 4px 11px; border-radius: 20px;
+  }
+  .project-title {
+    font-size: 18px; font-weight: 700; color: var(--text);
+    margin-bottom: 8px; line-height: 1.3; letter-spacing: -0.01em;
+  }
+  .project-desc { font-size: 14px; color: var(--muted2); line-height: 1.78; max-width: 540px; }
+  .project-link-btn {
+    flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 16px; border-radius: 8px; font-size: 12px; font-family: var(--font);
+    border: 1px solid var(--border2); color: var(--muted2); text-decoration: none;
+    transition: border-color 0.2s, background 0.2s, color 0.2s; white-space: nowrap;
+  }
+  .project-link-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(79,142,247,0.05); }
+  .project-body {
+    padding: 20px 32px;
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 20px;
+  }
+  .proj-stat-num { font-size: 19px; font-weight: 700; color: var(--text); }
+  .proj-stat-num span { color: var(--accent); }
+  .proj-stat-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 3px; }
+  .project-footer {
+    padding: 16px 32px; border-top: 1px solid var(--border);
+    display: flex; flex-wrap: wrap; gap: 7px;
+  }
+  .tech-tag {
+    font-size: 11px; padding: 3px 9px; border-radius: 6px;
+    background: rgba(79,142,247,0.07); color: var(--accent);
+    border: 1px solid rgba(79,142,247,0.16);
+  }
+
+  /* Curated 3-card grid */
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .proj-card {
+    padding: 22px 20px; border-radius: 12px;
+    border: 1px solid var(--border); background: var(--surface);
+    display: flex; flex-direction: column; gap: 10px;
+    transition: border-color 0.25s, transform 0.2s;
+    text-decoration: none;
+  }
+  .proj-card:hover { border-color: rgba(79,142,247,0.28); transform: translateY(-2px); }
+  .proj-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .proj-card-icon { font-size: 18px; }
+  .proj-card-lang {
+    font-size: 10px; padding: 2px 8px; border-radius: 20px;
+    border: 1px solid var(--border2); color: var(--muted); background: var(--surface2);
+    white-space: nowrap;
+  }
+  .proj-card-name { font-size: 13px; font-weight: 700; color: var(--accent); line-height: 1.3; }
+  .proj-card-desc { font-size: 13px; color: var(--muted); line-height: 1.65; flex: 1; }
+  .proj-card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .proj-card-tag {
+    font-size: 10px; padding: 2px 7px; border-radius: 20px;
+    background: rgba(79,142,247,0.07); color: var(--accent);
+    border: 1px solid rgba(79,142,247,0.14);
+  }
+  .view-all-row {
+    text-align: center; padding-top: 28px;
+  }
+  .view-all-link {
+    font-size: 13px; color: var(--muted);
+    text-decoration: none; border-bottom: 1px solid var(--border2);
+    padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .view-all-link:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ─── SKILLS (focused) ─── */
+  .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .skill-card {
+    padding: 22px 20px; border-radius: 12px;
+    border: 1px solid var(--border); background: var(--surface);
+    transition: border-color 0.25s, transform 0.2s;
+  }
+  .skill-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .skill-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .skill-card-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+  }
+  .skill-card-dot.blue  { background: var(--accent); }
+  .skill-card-dot.teal  { background: var(--accent2); }
+  .skill-card-dot.amber { background: var(--accent3); }
+  .skill-card-dot.gray  { background: var(--muted); }
+  .skill-card-title { font-size: 13px; font-weight: 700; color: var(--text); letter-spacing: 0.02em; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 11px; padding: 3px 9px; border-radius: 20px;
+    border: 1px solid var(--border2); color: var(--muted2);
+    background: var(--surface2);
+  }
+
+  /* ─── DIVIDER ─── */
   .section-divider { border: none; border-top: 1px solid var(--border); margin: 0 48px; }
 
-  /* FOOTER */
+  /* ─── FOOTER ─── */
   footer {
     border-top: 1px solid var(--border);
-    padding: 40px 48px;
+    padding: 36px 48px;
     display: flex; align-items: center; justify-content: space-between;
     font-size: 13px; color: var(--muted);
     flex-wrap: wrap; gap: 16px;
@@ -367,23 +365,23 @@ h1 {
   .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--text); }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
-  .hero-content > * { animation: fadeUp 0.65s ease both; }
-  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
-  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
-  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
-  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
-  .hero-content > *:nth-child(5) { animation-delay: 0.55s; }
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+  .hero-content > * { animation: fadeUp 0.6s ease both; }
+  .hero-content > *:nth-child(1) { animation-delay: 0.08s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.18s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.28s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.38s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
 
-  /* RESPONSIVE */
+  /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     .nav-links { gap: 18px; }
     .hero { padding: 100px 20px 60px; }
     section { padding: 60px 20px; }
     .about-grid { grid-template-columns: 1fr; gap: 36px; }
-    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: 1fr 1fr; }
     .project-header { flex-direction: column; }
     .project-body { grid-template-columns: repeat(2,1fr); }
@@ -392,128 +390,104 @@ h1 {
     footer { padding: 28px 20px; }
   }
   @media (max-width: 480px) {
-    .skills-grid { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ─── NAV ─── -->
 <nav>
   <a href="#" class="nav-logo">Ashish <span>Mohan</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-
+<!-- ─── HERO ─── -->
 <div class="hero">
-
   <div class="hero-grid"></div>
-
   <div class="hero-content">
 
     <div class="hero-eyebrow">
-      Available for Senior BI &amp; Analytics roles &middot; Abu Dhabi, UAE
+      Open to Senior BI &amp; Data Analytics roles &middot; Abu Dhabi, UAE
     </div>
 
     <h1>
-      Turning data<br>
-      into <em>decisions</em>
+      Turning <em>Data</em><br>
+      into Decisions
     </h1>
 
     <p class="hero-sub">
-
-  I design analytics and BI systems that turn fragmented operational data into
-  reporting systems leaders rely on. 6+ years building scalable BI solutions, analytics pipelines,
-  and decision focused reporting across enterprise environments.
+       I design analytics and BI systems that turn fragmented operational data into
+  reporting systems leaders <strong>rely on.</strong> More than six years building scalable BI solutions, analytics pipelines,
+  and decision focused reporting across  across healthcare, logistics and supply chain
+      at <strong>TCS, Meta,</strong> and <strong>Capgemini</strong>.
     </p>
 
     <div class="hero-cta">
-
-      <a href="#projects" class="btn-primary">
-        View Projects &darr;
+      <a href="#experience" class="btn-primary">
+        View Experience &darr;
       </a>
-
-      <a
-        href="https://linkedin.com/in/ashishmohan1612"
-        class="btn-ghost"
-        target="_blank"
-      >
+      <a href="https://linkedin.com/in/ashishmohan1612" class="btn-ghost" target="_blank">
         LinkedIn &#8599;
       </a>
-
     </div>
 
     <div class="hero-stats">
-
       <div>
         <div class="stat-num">85<span>%</span></div>
         <div class="stat-label">Reporting effort reduced</div>
       </div>
-
       <div>
         <div class="stat-num">260<span>h</span></div>
         <div class="stat-label">FTE hours saved annually</div>
       </div>
-
       <div>
         <div class="stat-num">35<span>%</span></div>
-        <div class="stat-label">Forecast accuracy gain</div>
+        <div class="stat-label">Forecast accuracy improved</div>
       </div>
-
       <div>
         <div class="stat-num">6<span>+</span></div>
-        <div class="stat-label">Years experience</div>
+        <div class="stat-label">Years enterprise experience</div>
       </div>
-
     </div>
 
   </div>
+</div>
 
-</div><hr class="section-divider">
+<hr class="section-divider">
 
-<!-- ABOUT -->
+<!-- ─── ABOUT ─── -->
 <section id="about">
   <div class="section-label">About</div>
-  <h2>BI that moves the needle</h2>
+  <h2>Building analytics that drives decisions</h2>
   <div class="about-grid">
     <div class="about-text">
-     <p>
-    For the past 6+ years, I’ve helped businesses turn complex operational
-    data into reporting systems and insights that leaders actually rely on
-    to make decisions.
-  </p>
-
-  <p>
-    Across projects at TCS supporting CVS Health and UNFI, I built Power BI
-    solutions that reduced manual reporting effort by <strong>85%</strong>,
-    recovered <strong>260 FTE hours annually</strong>, and improved forecast
-    accuracy by <strong>35%</strong>.
-  </p>
-
-  <p>
-    My approach is simple: build clean data models, create scalable data
-    pipelines, and understand what stakeholders truly need to see in order
-    to act quickly and confidently.
-  </p>
-
-  <p>
-    I work across Power BI, Microsoft Fabric, Databricks, Azure, SQL, and
-    Python, with experience supporting large scale enterprise reporting and
-    analytics environments across healthcare and logistics.
-  </p>
-
-  <p>
-    Recently relocated to the UAE and currently open to Senior BI,
-    Analytics, and Data focused opportunities across the UAE.
-  </p>
-  
+      <p>
+        For six years I've embedded with enterprise teams — at TCS supporting CVS Health
+        and UNFI, at Meta, and at Capgemini — to turn fragmented operational data into
+        analytics infrastructure that leaders genuinely rely on.
+      </p>
+      <p>
+        My work sits at the intersection of <strong>data engineering and business intelligence</strong>:
+        designing semantic models and DAX libraries that scale, modernising ETL to
+        lakehouse architectures, and building self-serve reporting environments that
+        reduce dependency on analyst teams.
+      </p>
+      <p>
+        I work across the <strong>Microsoft Fabric / Azure</strong> stack, Databricks,
+        Snowflake, SQL, and Python. I hold certifications in Power BI (PL-300),
+        Fabric Analytics Engineering (DP-600), Tableau, and AWS.
+      </p>
+      <p>
+        Recently relocated to the UAE and actively exploring
+        <strong>Senior BI Engineer, Analytics Engineer,</strong> and
+        <strong>Data Platform</strong> roles across the region.
+      </p>
     </div>
     <div class="about-certs">
       <div class="cert-item">
@@ -548,22 +522,24 @@ h1 {
   </div>
 </section>
 
-<!-- EXPERIENCE -->
+<hr class="section-divider">
+
+<!-- ─── EXPERIENCE ─── -->
 <section id="experience">
   <div class="section-label">Experience</div>
-  <h2>Where I&rsquo;ve worked</h2>
+  <h2>Where I&rsquo;ve delivered impact</h2>
   <div class="timeline">
 
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-period">Aug 2021 &ndash; Sep 2025</div>
+      <div class="timeline-period">Aug 2021 &ndash; Sep 2025 &middot; 4 years</div>
       <div class="timeline-role">Senior Data Analyst</div>
-      <div class="timeline-company">Tata Consultancy Services &middot; New Jersey, USA &middot; Clients: CVS Health, UNFI</div>
+      <div class="timeline-company">Tata Consultancy Services &nbsp;&middot;&nbsp; New Jersey, USA &nbsp;&middot;&nbsp; CVS Health &amp; UNFI</div>
       <ul class="timeline-bullets">
-        <li>Reduced manual reporting by <strong>85%</strong> via Power BI automation, saving <strong>260 FTE hours</strong> annually with real-time KPI monitoring for 500+ stakeholders</li>
-        <li>Led ETL modernisation to Databricks, improving processing efficiency by <strong>40%</strong></li>
-        <li>Improved forecast accuracy by <strong>35%</strong> through historical trend analysis and scenario modelling</li>
-        <li>Improved data quality by <strong>35%</strong> through automated validation frameworks and quality checks</li>
+        <li>Automated enterprise reporting for <strong>500+ stakeholders</strong>, reducing manual effort by <strong>85%</strong> and recovering <span class="impact-pill">260 FTE hrs / yr</span> through real-time Power BI pipelines</li>
+        <li>Led ETL modernisation to <strong>Databricks lakehouse</strong> architecture, improving pipeline throughput by <strong>40%</strong> and enabling near-real-time data availability</li>
+        <li>Built scenario and trend models that improved supply chain <strong>forecast accuracy by 35%</strong> — directly informing procurement decisions at UNFI</li>
+        <li>Designed and deployed automated data quality frameworks that raised data reliability by <strong>35%</strong>, reducing downstream reporting errors and analyst rework</li>
       </ul>
     </div>
 
@@ -571,11 +547,11 @@ h1 {
       <div class="timeline-dot"></div>
       <div class="timeline-period">May 2021 &ndash; Aug 2021</div>
       <div class="timeline-role">Data Operations Associate</div>
-      <div class="timeline-company">Facebook (Meta) &middot; New York, USA</div>
+      <div class="timeline-company">Meta (Facebook) &nbsp;&middot;&nbsp; New York, USA</div>
       <ul class="timeline-bullets">
-        <li>Optimised ETL workflows using Spark and Presto, reducing runtimes by <strong>25%</strong></li>
-        <li>Improved operational uptime by <strong>45%</strong> through proactive data quality management</li>
-        <li>Automated data collection via Python scripting, reducing reporting turnaround from days to hours</li>
+        <li>Optimised large-scale ETL workflows using <strong>Spark and Presto</strong>, cutting runtimes by 25% across high-volume production pipelines</li>
+        <li>Improved platform operational uptime by <strong>45%</strong> through proactive data quality monitoring and incident triage</li>
+        <li>Automated data collection via Python, reducing reporting turnaround from <strong>days to hours</strong></li>
       </ul>
     </div>
 
@@ -583,109 +559,48 @@ h1 {
       <div class="timeline-dot"></div>
       <div class="timeline-period">Sep 2017 &ndash; May 2019</div>
       <div class="timeline-role">Senior Analyst</div>
-      <div class="timeline-company">Capgemini &middot; Mumbai, India &middot; Clients: Posten Bring, Syngenta</div>
+      <div class="timeline-company">Capgemini &nbsp;&middot;&nbsp; Mumbai, India &nbsp;&middot;&nbsp; Posten Bring &amp; Syngenta</div>
       <ul class="timeline-bullets">
-        <li>Designed QlikView dashboards for finance and supply chain, improving decision-making speed by <strong>40%</strong></li>
-        <li>Implemented reporting automation using Oracle SQL, saving <strong>10% analyst time</strong> weekly</li>
-        <li>Delivered application support with <strong>95%+ SLA adherence</strong>, resolving 200+ incidents monthly</li>
+        <li>Designed QlikView dashboards for finance and supply chain that <strong>accelerated executive decision cycles by 40%</strong></li>
+        <li>Implemented Oracle SQL reporting automation, saving <strong>10% of analyst time weekly</strong> across the engagement team</li>
+        <li>Maintained <strong>95%+ SLA adherence</strong> across 200+ monthly incidents as primary application support lead</li>
       </ul>
     </div>
 
   </div>
 </section>
- 
-<hr class="section-divider">
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-label">Skills</div>
-  <h2>Technical stack</h2>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-card-icon">&#128202;</div>
-      <div class="skill-card-title">BI &amp; Visualisation</div>
-      <div class="skill-tags">
-        <span class="tag">Power BI</span><span class="tag">Tableau</span>
-        <span class="tag">QlikView</span><span class="tag">Looker</span>
-        <span class="tag">Microsoft Fabric</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon"> &#128452;</div>
-      <div class="skill-card-title">Data &amp; Modelling</div>
-      <div class="skill-tags">
-        <span class="tag">SQL Server</span><span class="tag">MySQL</span>
-        <span class="tag">Star Schema</span><span class="tag">DAX</span>
-        <span class="tag">M Query</span><span class="tag">ETL/ELT</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">&#9729;</div>
-      <div class="skill-card-title">Platforms &amp; Cloud</div>
-      <div class="skill-tags">
-        <span class="tag">Databricks</span><span class="tag">Azure</span>
-        <span class="tag">AWS</span><span class="tag">Spark</span>
-        <span class="tag">Snowflake</span><span class="tag">SSIS</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">&#128013;</div>
-      <div class="skill-card-title">Programming</div>
-      <div class="skill-tags">
-        <span class="tag">Python</span><span class="tag">Pandas</span>
-        <span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">R</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">&#128208;</div>
-      <div class="skill-card-title">Analytics</div>
-      <div class="skill-tags">
-        <span class="tag">Forecasting</span><span class="tag">A/B Testing</span>
-        <span class="tag">Root Cause Analysis</span><span class="tag">Trend Analytics</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">&#129309;</div>
-      <div class="skill-card-title">Business Skills</div>
-      <div class="skill-tags">
-        <span class="tag">Stakeholder Mgmt</span><span class="tag">Requirements Gathering</span>
-        <span class="tag">Process Automation</span><span class="tag">MIS Reporting</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <hr class="section-divider">
 
-<!-- PROJECTS -->
+<!-- ─── PROJECTS ─── -->
 <section id="projects">
   <div class="section-label">Projects</div>
-  <h2>Featured work</h2>
+  <h2>Selected work</h2>
 
-  <!-- FEATURED: Power BI -->
+  <!-- Featured -->
   <div class="project-featured">
     <div class="project-header">
       <div class="project-meta">
         <div class="project-badge">Power BI &middot; AdventureWorks</div>
-        <div class="project-title">Sales-Report-Powerbi</div>
-        <p class="project-desc">Multi-page sales analytics dashboard demonstrating end-to-end BI development &mdash; star schema modelling, a 23-measure DAX library, time intelligence, cross-page drill-through, and Row-Level Security on a $51.9M sales dataset.</p>
+        <div class="project-title">Enterprise Sales Analytics Dashboard</div>
+        <p class="project-desc">End-to-end BI build on a $51.9M sales dataset — star schema modelling, a 23-measure DAX library with time intelligence, cross-page drill-through, and Row-Level Security. Demonstrates production-grade Power BI architecture.</p>
       </div>
       <a href="https://github.com/Astromohan/Sales-Report-Powerbi" class="project-link-btn" target="_blank">View on GitHub &#8599;</a>
     </div>
     <div class="project-body">
-      <div class="proj-stat">
+      <div>
         <div class="proj-stat-num">5<span>+</span></div>
         <div class="proj-stat-label">Report Pages</div>
       </div>
-      <div class="proj-stat">
+      <div>
         <div class="proj-stat-num">23</div>
         <div class="proj-stat-label">DAX Measures</div>
       </div>
-      <div class="proj-stat">
+      <div>
         <div class="proj-stat-num">6</div>
         <div class="proj-stat-label">Dim Tables</div>
       </div>
-      <div class="proj-stat">
+      <div>
         <div class="proj-stat-num">RLS</div>
         <div class="proj-stat-label">Row-Level Security</div>
       </div>
@@ -698,20 +613,19 @@ h1 {
       <span class="tech-tag">RANKX</span>
       <span class="tech-tag">Row-Level Security</span>
       <span class="tech-tag">Drill-through</span>
-      <span class="tech-tag">AdventureWorks</span>
     </div>
   </div>
 
-  <!-- GRID: remaining repos -->
+  <!-- 3-card curated grid -->
   <div class="projects-grid">
 
     <a href="https://github.com/Astromohan/Yelp-Open-Dataset-Analysis" class="proj-card" target="_blank">
       <div class="proj-card-top">
         <div class="proj-card-icon">&#128269;</div>
-        <span class="proj-card-lang">Jupyter Notebook</span>
+        <span class="proj-card-lang">Python / Snowflake</span>
       </div>
-      <div class="proj-card-name">Yelp Open Dataset Analysis</div>
-      <div class="proj-card-desc">Transforms raw semi-structured Yelp data into structured insights using Python, AWS, and Snowflake. End-to-end pipeline from JSON ingestion to analytical output.</div>
+      <div class="proj-card-name">Yelp Dataset — Cloud Pipeline</div>
+      <div class="proj-card-desc">End-to-end pipeline ingesting semi-structured JSON into AWS S3, transforming via Python, and loading to Snowflake for analytical querying.</div>
       <div class="proj-card-tags">
         <span class="proj-card-tag">Python</span>
         <span class="proj-card-tag">AWS</span>
@@ -720,83 +634,13 @@ h1 {
       </div>
     </a>
 
-    <a href="https://github.com/Astromohan/Analysis-of-COVID-19-Data" class="proj-card" target="_blank">
-      <div class="proj-card-top">
-        <div class="proj-card-icon">&#128200;</div>
-        <span class="proj-card-lang">Jupyter Notebook</span>
-      </div>
-      <div class="proj-card-name">Analysis of COVID-19 Data</div>
-      <div class="proj-card-desc">Exploratory data analysis on global COVID-19 datasets. Covers trend analysis, rate calculations, and visualisation of case/death patterns across countries and timelines.</div>
-      <div class="proj-card-tags">
-        <span class="proj-card-tag">Python</span>
-        <span class="proj-card-tag">Pandas</span>
-        <span class="proj-card-tag">Data Analysis</span>
-      </div>
-    </a>
-
-    <a href="https://github.com/Astromohan/World-Happiness-Report" class="proj-card" target="_blank">
-      <div class="proj-card-top">
-        <div class="proj-card-icon">&#127758;</div>
-        <span class="proj-card-lang">Jupyter Notebook</span>
-      </div>
-      <div class="proj-card-name">World Happiness Report</div>
-      <div class="proj-card-desc">Analysis of the UN World Happiness Report dataset. Explores correlations between happiness scores and socioeconomic factors across nations using statistical modelling.</div>
-      <div class="proj-card-tags">
-        <span class="proj-card-tag">Python</span>
-        <span class="proj-card-tag">Statistics</span>
-        <span class="proj-card-tag">Visualisation</span>
-      </div>
-    </a>
-
-    <a href="https://github.com/Astromohan/Tableau-Women-s-Representation-in-Politics" class="proj-card" target="_blank">
-      <div class="proj-card-top">
-        <div class="proj-card-icon">&#128202;</div>
-        <span class="proj-card-lang">Tableau</span>
-      </div>
-      <div class="proj-card-name">Women&rsquo;s Representation in Politics</div>
-      <div class="proj-card-desc">Tableau dashboard visualising global data on women&rsquo;s political representation. Highlights regional disparities and longitudinal trends across legislative bodies.</div>
-      <div class="proj-card-tags">
-        <span class="proj-card-tag">Tableau</span>
-        <span class="proj-card-tag">Data Viz</span>
-        <span class="proj-card-tag">Public Data</span>
-      </div>
-    </a>
-
-    <a href="https://github.com/Astromohan/House-Prices-Analysis" class="proj-card" target="_blank">
-      <div class="proj-card-top">
-        <div class="proj-card-icon">&#127968;</div>
-        <span class="proj-card-lang">Jupyter Notebook</span>
-      </div>
-      <div class="proj-card-name">House Prices Analysis</div>
-      <div class="proj-card-desc">Regression-based analysis of housing price determinants. Feature engineering, correlation analysis, and predictive modelling on structured real estate data.</div>
-      <div class="proj-card-tags">
-        <span class="proj-card-tag">Python</span>
-        <span class="proj-card-tag">Regression</span>
-        <span class="proj-card-tag">Scikit-learn</span>
-      </div>
-    </a>
-
-    <a href="https://github.com/Astromohan/WebScraping-Youtube-Rankings-" class="proj-card" target="_blank">
-      <div class="proj-card-top">
-        <div class="proj-card-icon">&#128249;</div>
-        <span class="proj-card-lang">Jupyter Notebook</span>
-      </div>
-      <div class="proj-card-name">Web Scraping YouTube Rankings</div>
-      <div class="proj-card-desc">Automated scraping of YouTube channel ranking data using Python. Structures raw web data into an analysable dataset for trend and engagement analysis.</div>
-      <div class="proj-card-tags">
-        <span class="proj-card-tag">Python</span>
-        <span class="proj-card-tag">Web Scraping</span>
-        <span class="proj-card-tag">BeautifulSoup</span>
-      </div>
-    </a>
-
     <a href="https://github.com/Astromohan/Forecasting-Earth-s-Surface-Temperature" class="proj-card" target="_blank">
       <div class="proj-card-top">
         <div class="proj-card-icon">&#127757;</div>
         <span class="proj-card-lang">R</span>
       </div>
-      <div class="proj-card-name">Forecasting Earth&rsquo;s Surface Temperature</div>
-      <div class="proj-card-desc">Time series forecasting of global surface temperature using R. Applies ARIMA and trend decomposition models to historical climate data to project future trajectories.</div>
+      <div class="proj-card-name">Surface Temperature Forecasting</div>
+      <div class="proj-card-desc">ARIMA and seasonal decomposition models applied to long-horizon climate data in R. Demonstrates time-series forecasting methodology used in demand planning.</div>
       <div class="proj-card-tags">
         <span class="proj-card-tag">R</span>
         <span class="proj-card-tag">ARIMA</span>
@@ -805,29 +649,99 @@ h1 {
       </div>
     </a>
 
-    <a href="https://github.com/Astromohan/Power-Consumption-Prediction" class="proj-card" target="_blank">
+    <a href="https://github.com/Astromohan/Tableau-Women-s-Representation-in-Politics" class="proj-card" target="_blank">
       <div class="proj-card-top">
-        <div class="proj-card-icon">&#9889;</div>
-        <span class="proj-card-lang">Jupyter Notebook</span>
+        <div class="proj-card-icon">&#128202;</div>
+        <span class="proj-card-lang">Tableau</span>
       </div>
-      <div class="proj-card-name">Power Consumption Prediction</div>
-      <div class="proj-card-desc">Predictive modelling of household and industrial power consumption. Uses machine learning to forecast energy demand patterns from historical usage data.</div>
+      <div class="proj-card-name">Political Representation — Tableau</div>
+      <div class="proj-card-desc">Executive-style Tableau dashboard visualising longitudinal trends and regional disparities in legislative representation across 150+ countries.</div>
       <div class="proj-card-tags">
-        <span class="proj-card-tag">Python</span>
-        <span class="proj-card-tag">ML</span>
-        <span class="proj-card-tag">Forecasting</span>
-        <span class="proj-card-tag">Pandas</span>
+        <span class="proj-card-tag">Tableau</span>
+        <span class="proj-card-tag">Dashboard Design</span>
+        <span class="proj-card-tag">Public Data</span>
       </div>
     </a>
 
+  </div>
+
+  <div class="view-all-row">
+    <a href="https://github.com/Astromohan" class="view-all-link" target="_blank">View all repositories on GitHub &#8599;</a>
   </div>
 </section>
 
 <hr class="section-divider">
 
+<!-- ─── SKILLS ─── -->
+<section id="skills">
+  <div class="section-label">Capabilities</div>
+  <h2>Core technical stack</h2>
+  <div class="skills-grid">
 
+    <div class="skill-card">
+      <div class="skill-card-header">
+        <div class="skill-card-dot blue"></div>
+        <div class="skill-card-title">BI &amp; Visualisation</div>
+      </div>
+      <div class="skill-tags">
+        <span class="tag">Power BI</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Microsoft Fabric</span>
+        <span class="tag">Tableau</span>
+        <span class="tag">QlikView</span>
+        <span class="tag">Row-Level Security</span>
+      </div>
+    </div>
 
-<!-- FOOTER -->
+    <div class="skill-card">
+      <div class="skill-card-header">
+        <div class="skill-card-dot teal"></div>
+        <div class="skill-card-title">Data Engineering &amp; Pipelines</div>
+      </div>
+      <div class="skill-tags">
+        <span class="tag">SQL</span>
+        <span class="tag">Python</span>
+        <span class="tag">Databricks</span>
+        <span class="tag">Spark</span>
+        <span class="tag">Snowflake</span>
+        <span class="tag">dbt</span>
+        <span class="tag">ETL / ELT</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-header">
+        <div class="skill-card-dot amber"></div>
+        <div class="skill-card-title">Cloud Platforms</div>
+      </div>
+      <div class="skill-tags">
+        <span class="tag">Azure</span>
+        <span class="tag">Azure Data Factory</span>
+        <span class="tag">AWS (S3, Glue)</span>
+        <span class="tag">Azure Synapse</span>
+        <span class="tag">Lakehouse</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-header">
+        <div class="skill-card-dot gray"></div>
+        <div class="skill-card-title">Analytics &amp; Modelling</div>
+      </div>
+      <div class="skill-tags">
+        <span class="tag">Statistical Modelling</span>
+        <span class="tag">Forecasting</span>
+        <span class="tag">Data Quality</span>
+        <span class="tag">Dimensional Modelling</span>
+        <span class="tag">R</span>
+        <span class="tag">Scikit-learn</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
 <footer>
   <div>Ashish Mohan &middot; ashish.mohan42@gmail.com</div>
   <div class="footer-links">
