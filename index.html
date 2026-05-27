@@ -61,42 +61,45 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+
   padding: 120px 48px 80px;
+
+  position: relative;
+  overflow: hidden;
 
   background-image:
     linear-gradient(
-      rgba(2, 6, 23, 0.55),
-      rgba(2, 6, 23, 0.65)
+      to right,
+      rgba(6,8,15,0.72) 0%,
+      rgba(6,8,15,0.42) 45%,
+      rgba(6,8,15,0.12) 100%
     ),
     url('https://images.unsplash.com/photo-1594745025719-a419ca3852c9?q=100&w=4000&auto=format&fit=crop');
 
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-
-  position: relative;
-  overflow: hidden;
-
-  transform: translateZ(0);
 }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(79,142,247,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(79,142,247,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
- .hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(6,8,15,0.92) 0%,
-    rgba(6,8,15,0.75) 50%,
-    rgba(6,8,15,0.4) 100%
-  );
-  z-index: 0;
+ .hero-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(79,142,247,0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(79,142,247,0.02) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  pointer-events: none;
 }
+
   /*.hero-glow {
     position: absolute; top: -200px; right: -200px;
     width: 700px; height: 700px; border-radius: 50%;
@@ -110,7 +113,11 @@
     pointer-events: none;
   }
  */
-  .hero-content { position: relative; max-width: 780px; }
+  .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 10px;
     font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
@@ -126,19 +133,32 @@
     animation: pulse 2s ease-in-out infinite;
   }
   @keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:0.3; } }
+h1 {
+  font-family: var(--font);
 
-  h1 {
-    font-family: var(--font);
-    font-size: clamp(40px, 5.5vw, 68px);
-    font-weight: 700; line-height: 1.08;
-    letter-spacing: -0.01em; margin-bottom: 24px;
-  }
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 700;
+
+  line-height: 1.03;
+  letter-spacing: -0.04em;
+
+  margin-bottom: 24px;
+
+  color: var(--text);
+}
   h1 em { font-style: normal; color: var(--accent); }
 
-  .hero-sub {
-    font-size: 17px; color: var(--muted); max-width: 540px;
-    line-height: 1.75; margin-bottom: 40px; font-weight: 400;
-  }
+ .hero-sub {
+  max-width: 600px;
+
+  margin-bottom: 42px;
+
+  color: rgba(232,237,245,0.84);
+
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 400;
+}
   .hero-sub strong { color: var(--text); font-weight: 600; }
 
   .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 64px; }
@@ -391,43 +411,72 @@
 </nav>
 
 <!-- HERO -->
+<!-- HERO -->
+
 <div class="hero">
+
   <div class="hero-grid"></div>
- <div class="hero-overlay"></div>
+
   <div class="hero-content">
-    <div class="hero-eyebrow">Available for Senior BI &amp; Analytics roles &middot; Abu Dhabi, UAE</div>
-    <h1>Turning data<br>into <em>decisions</em></h1>
-    <p class="hero-sub">
-      <strong>I build BI systems that leaders actually use. 6+ years delivering
-      Power BI solutions, scalable data pipelines, and clean data models for
-      Fortune 500 organisationsincluding CVS Health, UNFI, and Meta.</strong>
-    </p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn-primary">View Projects &darr;</a>
-      <a href="https://linkedin.com/in/ashishmohan1612" class="btn-ghost" target="_blank">LinkedIn &#8599;</a>
+
+    <div class="hero-eyebrow">
+      Available for Senior BI &amp; Analytics roles &middot; Abu Dhabi, UAE
     </div>
+
+    <h1>
+      Turning data<br>
+      into <em>decisions</em>
+    </h1>
+
+    <p class="hero-sub">
+      I build BI systems that leaders actually use. 6+ years delivering
+      Power BI solutions, scalable data pipelines, and decision focused
+      analytics across healthcare, logistics, and enterprise operations.
+    </p>
+
+    <div class="hero-cta">
+
+      <a href="#projects" class="btn-primary">
+        View Projects &darr;
+      </a>
+
+      <a
+        href="https://linkedin.com/in/ashishmohan1612"
+        class="btn-ghost"
+        target="_blank"
+      >
+        LinkedIn &#8599;
+      </a>
+
+    </div>
+
     <div class="hero-stats">
+
       <div>
         <div class="stat-num">85<span>%</span></div>
         <div class="stat-label">Reporting effort reduced</div>
       </div>
+
       <div>
         <div class="stat-num">260<span>h</span></div>
         <div class="stat-label">FTE hours saved annually</div>
       </div>
+
       <div>
         <div class="stat-num">35<span>%</span></div>
         <div class="stat-label">Forecast accuracy gain</div>
       </div>
+
       <div>
         <div class="stat-num">6<span>+</span></div>
         <div class="stat-label">Years experience</div>
       </div>
-    </div>
-  </div>
-</div>
 
-<hr class="section-divider">
+    </div>
+
+  </div>
+
+</div><hr class="section-divider">
 
 <!-- ABOUT -->
 <section id="about">
@@ -435,9 +484,36 @@
   <h2>BI that moves the needle</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>For the past 6+ years, I&rsquo;ve helped businesses turn complex data into reporting systems and insights that leaders <strong>actually use to make decisions</strong>.</p>
-      <p>At TCS &mdash; supporting CVS Health and UNFI &mdash; I built Power BI solutions that reduced manual reporting effort by <strong>85%</strong>, recovered 260 FTE hours annually, and improved forecast accuracy by <strong>35%</strong>.</p>
-      <p>My approach: build clean data models, create scalable pipelines, and understand what stakeholders truly need to <strong>act quickly</strong>. I work across Power BI, Microsoft Fabric, Databricks, Azure, SQL, and Python.</p>
+     <p>
+    For the past 6+ years, I’ve helped businesses turn complex operational
+    data into reporting systems and insights that leaders actually rely on
+    to make decisions.
+  </p>
+
+  <p>
+    Across projects at TCS supporting CVS Health and UNFI, I built Power BI
+    solutions that reduced manual reporting effort by <strong>85%</strong>,
+    recovered <strong>260 FTE hours annually</strong>, and improved forecast
+    accuracy by <strong>35%</strong>.
+  </p>
+
+  <p>
+    My approach is simple: build clean data models, create scalable data
+    pipelines, and understand what stakeholders truly need to see in order
+    to act quickly and confidently.
+  </p>
+
+  <p>
+    I work across Power BI, Microsoft Fabric, Databricks, Azure, SQL, and
+    Python, with experience supporting large scale enterprise reporting and
+    analytics environments across healthcare and logistics.
+  </p>
+
+  <p>
+    Recently relocated to the UAE and currently open to Senior BI,
+    Analytics, and Data focused opportunities across the UAE.
+  </p>
+  
     </div>
     <div class="about-certs">
       <div class="cert-item">
